@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: coffee_shop
+    description: 'data about coffee roasting business'
+    project: aec-students
+    tables:
+      - name: customers
+        description: 'customers information from sales system'
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: orders
+        description: 'orders information from sales system'
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
