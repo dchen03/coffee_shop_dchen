@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: customers
+    description: '{{ doc("customers_table") }}'
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: n_orders
+        tests: 
+          - accepted_values: # this test should fail
+              values: [0]
+              quote: false
