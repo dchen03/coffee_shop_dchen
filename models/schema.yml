@@ -14,3 +14,15 @@ models:
           - accepted_values: # this test should fail
               values: [0]
               quote: false
+
+  - name: monthly_customers
+    description: 'number of customers per month, each row represents a month'
+    columns:
+      - name: signup_month
+        description: 'sign_up_month indicated as the first of the month, but shows totals for the whole month'
+        tests:
+          - unique
+          - not_null
+
+      - name: new_customers
+        description: 'number of customers by month'
