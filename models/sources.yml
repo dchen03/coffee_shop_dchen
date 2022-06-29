@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: coffee_shop
+    description: 'data about coffee roasting business'
+    project: analytics-engineers-club
+    freshness:
+      warn_after:
+        count: 398
+        period: day
+    loaded_at_field: created_at
+    tables:
+      - name: customers
+        description: 'customers information from sales system'
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: orders
+        description: 'orders information from sales system'
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
