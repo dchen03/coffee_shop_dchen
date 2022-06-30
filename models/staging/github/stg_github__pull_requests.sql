@@ -7,14 +7,14 @@ with source as (
 renamed as (
 
     select
-        id,
+        id as pull_request_id,
         _fivetran_synced,
         base_label,
         base_ref,
         base_repo_id,
         base_sha,
         base_user_id,
-        draft,
+        draft as is_draft,
         head_label,
         head_ref,
         head_repo_id,
