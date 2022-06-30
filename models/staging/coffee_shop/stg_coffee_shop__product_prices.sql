@@ -9,7 +9,7 @@ renamed as (
     select
         id as product_price_id,
         product_id,
-        price,
+        price as product_price,
 
     -- timestamp
         created_at as product_price_created_at,
