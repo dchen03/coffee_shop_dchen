@@ -43,6 +43,7 @@ final as (
 
     left join product_prices
         on order_items.product_id = product_prices.product_id
+        and orders.order_created_at between product_prices.product_price_created_at and  product_prices.product_price_ended_at
 
 )
 
