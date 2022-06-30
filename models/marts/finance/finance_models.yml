@@ -1,0 +1,16 @@
+version: 2 
+
+models:
+    - name: product_price_on_orders
+      description: Each row represents a product that was ordered 
+      columns:
+        - name: product_price
+          description: The price of a product at the time it was ordered. Prices change depending on time of order
+          tests: 
+            - not_null
+  
+
+        
+        
+        
+
