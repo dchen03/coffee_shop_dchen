@@ -1,0 +1,10 @@
+version: 2 
+
+models:
+    - name: user_stitching
+      description: Each row represents a page view 
+      columns:
+        - name: new_visitor_id
+          description: New visitor id where each visitor is the same person, mimics customer_id
+          tests: 
+            - not_null

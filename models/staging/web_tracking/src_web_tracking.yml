@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: web_tracking
+    description: 'data about web traffic for coffee shop'
+    project: analytics-engineers-club
+    tables:
+      - name: pageviews
+        description: 'one row per browser session'
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: visitor_id
+            tests:
+              - not_null
+          - name: device_type
+            tests:
+              - not_null
+          - name: timestamp
+            tests:
+              - not_null
+          - name: page
+            tests:
+              - not_null
+          - name: customer_id
