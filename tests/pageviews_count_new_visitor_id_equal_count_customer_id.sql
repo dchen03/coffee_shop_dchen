@@ -1,6 +1,6 @@
 
 
---- new_visitor_id tracks the customer, should have the same number of page views as customer_id
+--- there should not be any customers with multiple visitor IDs
 --- therefore, return records where this isn't true to make the test fail
 
 select 
