@@ -13,8 +13,8 @@ final as (
         page,
         pageview_at,
         case
-        when customer_id is not null then concat('a', dense_rank() over (order by customer_id))
-        else null
+            when customer_id is not null then concat('a', dense_rank() over (order by customer_id))
+            else null
         end as new_visitor_id
     from pageviews
     order by

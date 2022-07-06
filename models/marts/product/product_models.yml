@@ -8,3 +8,4 @@ models:
           description: New visitor id where each visitor is the same person, mimics customer_id
           tests: 
             - not_null
+            - pageviews_count_new_visitor_id_equal_count_customer_id
