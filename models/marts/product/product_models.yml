@@ -4,7 +4,11 @@ models:
     - name: user_stitching
       description: Each row represents a page view 
       columns:
-        - name: customer_visitor_id,
+        - name: customer_visitor_id
           description: The customer_id for visits associated with that customer
           tests: 
             - not_null
+            - pageviews_no_customers_with_multiple_visitor_ids
+        - name: user_session_id
+          description: Browsing session number for each customer, browsing sessions within 30 min count as 1 session regardless of a device switch
+          tests: 
