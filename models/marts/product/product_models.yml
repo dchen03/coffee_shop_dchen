@@ -4,8 +4,7 @@ models:
     - name: user_stitching
       description: Each row represents a page view 
       columns:
-        - name: new_visitor_id
-          description: New visitor id where each visitor is the same person, mimics customer_id
+        - name: customer_visitor_id,
+          description: The customer_id for visits associated with that customer
           tests: 
             - not_null
-            - pageviews_count_new_visitor_id_equal_count_customer_id
