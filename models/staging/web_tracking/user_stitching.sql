@@ -4,8 +4,6 @@ pageviews as (
     select * from {{ ref('stg_web_tracking__pageviews') }}
 ),
 
-/* User stitching */
-
 -- customer id and visitor id crosswalk 
 customer_visitor as ( 
     select distinct 

@@ -27,10 +27,10 @@ models:
           tests: 
             - not_null
         - name: session_start_at
-          description: time of first page view within a visitor session
+          description: time of first page view within a visitor session, session start and end times will be the same if there is only one page view
           tests:
             - not_null
         - name: session_end_at
-          description: time of last page view within a visitor session
+          description: time of last page view within a visitor session, session start and end times will be the same if there is only one page view
           tests:
             - not_null
