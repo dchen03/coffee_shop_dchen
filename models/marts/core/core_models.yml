@@ -1,0 +1,18 @@
+version: 2 
+
+models:
+    - name: customers_all_weeks
+      description: Each row represents a week that a customer is in the system
+      columns:
+        - name: week_number
+          description: 0 indicates the first week of a customer purchase
+          tests: 
+            - not_null
+        - name: date_week
+          description: week of customer purchase
+        - name: first_week
+          description: week that customer made their first purchase
+        - name: weekly_spend
+          description: amount the customer spent per week
+    - name: cohort_sizes
+      description: Each row represents a week, with the number of customers who started in that week

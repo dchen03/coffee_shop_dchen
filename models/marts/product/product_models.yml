@@ -1,9 +1,0 @@
-version: 2 
-
-models:
-    - name: sessions_metadata
-      description: Each row represents a session
-      columns:
-        - name: n_page_visits
-          description: Number of page visits per session
-          tests: 

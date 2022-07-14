@@ -1,36 +1,15 @@
 version: 2
 
 models:
-    - name: user_stitching
-      description: Each row represents a page view, blended_id stitches visitor_id and customer_id 
-      columns:
-        - name: customer_id
-          description: The customer_id for visits associated with that customer, visitors with null customer_ids were filled in if we knew what customer_id the visitor was attached to
-        - name: blended_id
-          description: id of visitor; customer_id if we know which customer made the visit, otherwise visitor_id
-          tests: 
-            - not_null
-
-    - name: sessionization
-      description: Each row represents a page view, creation of sessions  
-      columns:
-        - name: user_session_id
-          description: Browsing session number for each customer, browsing sessions within 30 min count as 1 session regardless of a device switch
-          tests: 
-            - not_null
-        - name: global_session_id
-          description: Browsing session number across all customers ordered by pageview time, browsing sessions within 30 min count as 1 session regardless of a device switch
-          tests: 
-            - not_null
-        - name: is_new_session
-          description: 1/0 for whether a new session started, sessions are a series of pageviews separated by a gap of more than 30 min
-          tests: 
-            - not_null
-        - name: session_start_at
-          description: time of first page view within a visitor session, session start and end times will be the same if there is only one page view
-          tests:
-            - not_null
-        - name: session_end_at
-          description: time of last page view within a visitor session, session start and end times will be the same if there is only one page view
-          tests:
-            - not_null
+  - name: visitors
+    description: one record per visitor id with their eventual customer_id
+    columns:
+      - name: visitor_id
+        tests:
+          - unique
+          - not_null
+      - name: first_customer_id
+        description: >
+          May be null if the visitor has not yet become a customer.
+          May be duplicated too, in the case where a two separate visitors turned
+          out to be the same customer
