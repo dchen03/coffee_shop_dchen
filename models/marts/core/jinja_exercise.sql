@@ -1,4 +1,7 @@
-{%- set product_categories = ['coffee beans', 'merch', 'brewing supplies'] -%}
+{%- set product_categories = dbt_utils.get_column_values(
+    table=ref('product_price_on_orders'),
+    column='product_category'
+) -%}
 
 select
   date_trunc(order_created_at, month) as date_month,
