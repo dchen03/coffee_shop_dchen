@@ -20,6 +20,12 @@ sources:
           - name: email
             tests: 
               - email_format
+              - is_not_gmail:
+                  config:
+                    severity: warn
+                    error_if: ">100"
+                    warn_if: ">5"
+
 
       - name: orders
         description: 'orders information from sales system'
