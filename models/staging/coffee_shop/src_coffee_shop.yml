@@ -17,6 +17,9 @@ sources:
             tests:
               - unique
               - not_null
+          - name: email
+            tests: 
+              - email_format
 
       - name: orders
         description: 'orders information from sales system'
@@ -47,8 +50,9 @@ sources:
             tests:
               - unique
               - not_null
-
-
+          - name: price
+            tests:
+              - greater_than_zero
 
       - name: products
         description: 'product names and categories'
