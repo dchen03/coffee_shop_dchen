@@ -35,3 +35,13 @@ models:
   coffee_shop:
     # Config indicated by + and applies to all files under models/example/
     materialized: view
+
+# set up github configuration with fivetran github package
+vars:
+  github_source:
+    github_database: analytics-engineers-club
+    github_schema: github
+    github__using_repo_team: false # by default this is assumed to be true
+
+  github:
+    github__using_repo_team: false
