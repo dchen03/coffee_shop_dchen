@@ -1,0 +1,5 @@
+version: 2
+
+snapshots:
+  - name: favorite_ice_creams
+    description: favorite ice cream flavor by github name
